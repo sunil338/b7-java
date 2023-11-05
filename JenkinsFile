@@ -1,7 +1,10 @@
 pipeline {
 
 	agent any
-	stages{   
+        tool {
+          maven 'm395'
+        }
+        stages{   
 		stage(clean){
 			steps{
 				    sh 'mvn clean'
