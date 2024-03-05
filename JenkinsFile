@@ -6,9 +6,14 @@ pipeline{
 					sh 'mvn clean'
 					}
 			}
-			stage(build){
+stage(install){
 				steps{
-					sh 'mvn install'
+					sh 'mvn  install -DskipTests'
+					}
+			}
+			stage(test){
+				steps{
+					sh 'mvn test'
 					}
 					
 					post {
